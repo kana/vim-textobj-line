@@ -90,6 +90,12 @@ NAMED KEY MAPPINGS				*textobj-line-named-key-mappings*
 			end of line character.  You can select the same
 			portion with the following command: 0v$h
 
+			Note that this text object selects nothing if
+
+			* the current line does not contain any character,
+
+			because there is no text to select in the current line.
+
 <Plug>(textobj-line-i)				*<Plug>(textobj-line-i)*
 			Select all characters in the current line without
 			leading spaces, trailing spaces and the end of line
@@ -98,6 +104,7 @@ NAMED KEY MAPPINGS				*textobj-line-named-key-mappings*
 
 			Note that this text object selects nothing if
 
+			* the current line does not contain any character, or
 			* the current line consists only of space characters,
 
 			because there is no text to select in the current line.

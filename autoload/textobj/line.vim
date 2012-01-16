@@ -23,6 +23,10 @@
 " }}}
 " Interface  "{{{1
 function! textobj#line#select_a()  "{{{2
+  if empty(getline('.'))
+    return 0
+  endif
+
   normal! 0
   let head_pos = getpos('.')
 
@@ -36,6 +40,10 @@ endfunction
 
 
 function! textobj#line#select_i()  "{{{2
+  if empty(getline('.'))
+    return 0
+  endif
+
   normal! ^
   let head_pos = getpos('.')
 
