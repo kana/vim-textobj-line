@@ -11,7 +11,7 @@ function s:describe__textobj_line_select_a()  "{{{1
   It should select all characters in the current line but the end of line.
 
   new
-    silent 1 put! =['', '   foo bar baz   ', '', 'x', '']
+    silent 1 put! =['', '   foo bar baz   ', '', 'x', '', '   ', '']
 
     call s:check('2gg0', 'valy', '   foo bar baz   ')
     call s:check('2gg0', 'yal', '   foo bar baz   ')
@@ -19,6 +19,8 @@ function s:describe__textobj_line_select_a()  "{{{1
     call s:check('2gg0ww', 'yal', '   foo bar baz   ')
     call s:check('4gg0', 'valy', 'x')
     call s:check('4gg0', 'yal', 'x')
+    call s:check('6gg2|', 'valy', '   ')
+    call s:check('6gg2|', 'yal', '   ')
   close!
 endfunction
 
@@ -29,7 +31,7 @@ function s:describe__textobj_line_select_i()  "{{{1
   It should select all characters in the current line but surrounding spaces.
 
   new
-    silent 1 put! =['', '   foo bar baz   ', '', 'x', '']
+    silent 1 put! =['', '   foo bar baz   ', '', 'x', '', '   ', '']
 
     call s:check('2gg0', 'vily', 'foo bar baz')
     call s:check('2gg0', 'yil', 'foo bar baz')
@@ -37,6 +39,8 @@ function s:describe__textobj_line_select_i()  "{{{1
     call s:check('2gg0ww', 'yil', 'foo bar baz')
     call s:check('4gg0', 'vily', 'x')
     call s:check('4gg0', 'yil', 'x')
+    call s:check('6gg2|', 'vily', ' ')  " NB: Cannot select empty text in Visual mode.
+    call s:check('6gg2|', 'yil', '')
   close!
 endfunction
 

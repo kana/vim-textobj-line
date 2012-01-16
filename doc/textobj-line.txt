@@ -96,6 +96,12 @@ NAMED KEY MAPPINGS				*textobj-line-named-key-mappings*
 			character.  You can select the same portion with the
 			following command: ^vg_
 
+			Note that this text object selects nothing if
+
+			* the current line consists only of space characters,
+
+			because there is no text to select in the current line.
+
 
 
 

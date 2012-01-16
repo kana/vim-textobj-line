@@ -42,7 +42,11 @@ function! textobj#line#select_i()  "{{{2
   normal! g_
   let tail_pos = getpos('.')
 
-  return ['v', head_pos, tail_pos]
+  let non_blank_char_exists_p = getline('.')[head_pos[2] - 1] !~# '\s'
+  return
+  \ non_blank_char_exists_p
+  \ ? ['v', head_pos, tail_pos]
+  \ : 0
 endfunction
 
 
