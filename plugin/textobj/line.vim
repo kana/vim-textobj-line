@@ -1,5 +1,5 @@
 " textobj-line - Text objects for the current line
-" Version: 0.0.0
+" Version: 0.0.1
 " Copyright (C) 2012-2013 Kana Natsuno <http://whileimautomaton.net/>
 " License: So-called MIT/X license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
