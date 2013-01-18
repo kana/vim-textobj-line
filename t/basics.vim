@@ -4,13 +4,22 @@ function! s:check(move_cmd, op_cmd, expected_value)
   let @0 = '*nothing yanked*'
   execute 'normal!' a:move_cmd
   execute 'normal' a:op_cmd
-  Should @0 ==# a:expected_value
+  Expect @0 ==# a:expected_value
 endfunction
 
-function s:describe__textobj_line_select_a()  "{{{1
-  It should select all characters in the current line but the end of line.
 
-  new
+
+
+describe '<Plug>(textobj-line-select-a)'
+  before
+    new
+  end
+
+  after
+    close!
+  end
+
+  it 'selects all characters in the current line but the end of line'
     silent 1 put! =['', '   foo bar baz   ', '', 'x', '', '   ', '', '', '']
 
     call s:check('2gg0', 'valy', '   foo bar baz   ')
@@ -23,16 +32,22 @@ function s:describe__textobj_line_select_a()  "{{{1
     call s:check('6gg2|', 'yal', '   ')
     call s:check('8gg0', 'valy', "\n")  " NB: Cannot select empty text in Visual mode.
     call s:check('8gg0', 'yal', '')
-  close!
-endfunction
+  end
+end
 
 
 
 
-function s:describe__textobj_line_select_i()  "{{{1
-  It should select all characters in the current line but surrounding spaces.
+describe '<Plug>(textobj-line-select-i)'
+  before
+    new
+  end
 
-  new
+  after
+    close!
+  end
+
+  it 'selects all characters in the current line but surrounding spaces'
     silent 1 put! =['', '   foo bar baz   ', '', 'x', '', '   ', '', '', '']
 
     call s:check('2gg0', 'vily', 'foo bar baz')
@@ -45,11 +60,5 @@ function s:describe__textobj_line_select_i()  "{{{1
     call s:check('6gg2|', 'yil', '')
     call s:check('8gg0', 'vily', "\n")  " NB: Cannot select empty text in Visual mode.
     call s:check('8gg0', 'yil', '')
-  close!
-endfunction
-
-
-
-
-" __END__  "{{{1
-" vim: filetype=vim foldmethod=marker
+  end
+end
