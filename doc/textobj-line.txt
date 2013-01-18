@@ -126,6 +126,10 @@ BUGS						*textobj-line-bugs*
 ==============================================================================
 CHANGELOG					*textobj-line-changelog*
 
+0.0.1	2013-01-18T21:08:10+09:00		*textobj-line-changelog-0.0.1*
+	- Support vim-flavor <https://github.com/kana/vim-flavor>.
+	- Update |textobj-line-introduction|.
+
 0.0.0	2012-01-16T18:48:10+09:00		*textobj-line-changelog-0.0.0*
 	- Initial version.
 
