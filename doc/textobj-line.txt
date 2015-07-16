@@ -58,9 +58,6 @@ Installation:
 Latest version:
 https://github.com/kana/vim-textobj-line
 
-Document in HTML format:
-http://vim-doc.heroku.com/view?https://github.com/kana/vim-textobj-line/blob/master/doc/textobj-line.txt
-
 
 
 
