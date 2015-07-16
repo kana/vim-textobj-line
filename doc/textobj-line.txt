@@ -126,6 +126,10 @@ BUGS						*textobj-line-bugs*
 ==============================================================================
 CHANGELOG					*textobj-line-changelog*
 
+0.0.2	2015-07-16T20:56:24+09:00		*textobj-line-changelog-0.0.2*
+	- Update for new |textobj-user| conventions.  Now textobj-user 0.4 or
+          later is required to use textobj-line.
+
 0.0.1	2013-01-18T21:08:10+09:00		*textobj-line-changelog-0.0.1*
 	- Support vim-flavor <https://github.com/kana/vim-flavor>.
 	- Update |textobj-line-introduction|.
