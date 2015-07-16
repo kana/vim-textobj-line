@@ -1,9 +1,9 @@
 *textobj-line.txt*	Text objects for the current line
 
-Version 0.0.1
+Version 0.0.2
 Script ID: 3886
-Copyright (C) 2012-2013 Kana Natsuno <http://whileimautomaton.net/>
-License: So-called MIT/X license  {{{
+Copyright (C) 2012-2015 Kana Natsuno <http://whileimautomaton.net/>
+License: MIT license  {{{
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
     "Software"), to deal in the Software without restriction, including
@@ -50,16 +50,13 @@ leading and trailing spaces) by |<Plug>(textobj-line-i)| and "__foo_bar_baz__"
 
 Requirements:
 - Vim 7.2 or later
-- |textobj-user| 0.3.8 or later (vimscript#2100)
+- |textobj-user| 0.4.0 or later (vimscript#2100)
 
 Installation:
 - Recommended way: Use vim-flavor <https://github.com/kana/vim-flavor>.
 
 Latest version:
 https://github.com/kana/vim-textobj-line
-
-Document in HTML format:
-http://vim-doc.heroku.com/view?https://github.com/kana/vim-textobj-line/blob/master/doc/textobj-line.txt
 
 
 
@@ -125,6 +122,10 @@ BUGS						*textobj-line-bugs*
 
 ==============================================================================
 CHANGELOG					*textobj-line-changelog*
+
+0.0.2	2015-07-16T20:56:24+09:00		*textobj-line-changelog-0.0.2*
+	- Update for new |textobj-user| conventions.  Now textobj-user 0.4 or
+          later is required to use textobj-line.
 
 0.0.1	2013-01-18T21:08:10+09:00		*textobj-line-changelog-0.0.1*
 	- Support vim-flavor <https://github.com/kana/vim-flavor>.
