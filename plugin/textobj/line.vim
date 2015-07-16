@@ -31,8 +31,8 @@ endif
 
 call textobj#user#plugin('line', {
 \      '-': {
-\        'select-a': 'al', '*select-a-function*': 'textobj#line#select_a',
-\        'select-i': 'il', '*select-i-function*': 'textobj#line#select_i',
+\        'select-a': 'al', 'select-a-function': 'textobj#line#select_a',
+\        'select-i': 'il', 'select-i-function': 'textobj#line#select_i',
 \      },
 \    })
 
