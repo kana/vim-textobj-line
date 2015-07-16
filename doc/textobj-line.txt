@@ -1,6 +1,6 @@
 *textobj-line.txt*	Text objects for the current line
 
-Version 0.0.1
+Version 0.0.2
 Script ID: 3886
 Copyright (C) 2012-2015 Kana Natsuno <http://whileimautomaton.net/>
 License: MIT license  {{{
