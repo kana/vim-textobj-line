@@ -1,3 +1,4 @@
 .vim-flavor
+Flavorfile.lock
 Gemfile.lock
-VimFlavor.lock
+tags
