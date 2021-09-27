@@ -1,5 +1,3 @@
-#!/usr/bin/env rake
-
 task :ci => [:dump, :test]
 
 task :dump do
