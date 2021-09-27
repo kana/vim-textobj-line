@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: 0 0 * * *
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Get local Vim version
+      run: echo "local_vim_version=$(<.vim-version)" >>$GITHUB_ENV
+    - name: Set up Vim
+      uses: thinca/action-setup-vim@v1
+      with:
+        vim_version: ${{ github.event_name == 'schedule' && 'head' || env.local_vim_version }}
+        vim_type: vim
+        download: never # For some reason 'available' doesn't build from source as a fallback.
+    - name: Run tests
+      # 2>&1 required to avoid interleaved stdout and stderr in log.
+      run: rake ci 2>&1
